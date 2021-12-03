@@ -131,14 +131,14 @@ namespace NinetiesTV
         // 15. Return the show with the most episodes.
         static Show MostEpisodes(List<Show> shows)
         {
-            throw new NotImplementedException();
+            return shows.FirstOrDefault(s => s.EpisodeCount == shows.Max(s => s.EpisodeCount));
         }
 
         // 16. Order the shows by their ending year then return the first 
         //     show that ended on or after the year 2000.
         static Show EndedFirstAfterTheMillennium(List<Show> shows)
         {
-            throw new NotImplementedException();
+            return shows.OrderBy(s => s.EndYear).FirstOrDefault(s => s.EndYear >= 2000);
         }
 
         // 17. Order the shows by rating (highest first) 
